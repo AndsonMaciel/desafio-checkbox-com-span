@@ -80,54 +80,58 @@
 
 /* switch */
 
+.switch {
+    --swith-color: #cfd8dc;
+    --time: .2s;
+}
+
 .switch span {
     display: inline-block;
-    font-size: 26px;
     width: 2em;
     height: 1em;
-    background-color: white;
+    border-radius: 1em;
+    outline: 0.077em solid var(--swith-color);
+    overflow: hidden;
     position: relative;
-    border: 0.077em solid #ccc;
-    border-radius: 1.92em 1.92em;
 }
 
-.switch input[type="checkbox"]+span {
+.switch span::after {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: var(--swith-color);
+    transition: all var(--time) ease-in-out;
+    transform: translateX(0);
+    position: relative;
+    z-index: 1;
+}
+
+.switch input[type="checkbox"]:checked+span::after {
+    transform: translateX(100%);
     background-color: white;
 }
 
-.switch input[type="checkbox"]+span::before {
+.switch span::before {
     content: "";
-    display: block;
-    background-color: #ccc;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--swith-color);
+    transform: translateX(-100%);
+    transition: transform var(--time) ease-in-out;
     position: absolute;
-    top: .038em;
-    right: 1em;
-    bottom: .038em;
-    left: .038em;
-    border-radius: 1.92em 1.92em;
-    transition: background-color .5s;
-}
-
-.switch input[type="checkbox"]:checked+span {
-    background-color: #ccc;
+    z-index: 0;
 }
 
 .switch input[type="checkbox"]:checked+span::before {
-    content: "";
-    display: block;
-    background-color: white;
-    position: absolute;
-    top: .0;
-    right: .0;
-    bottom: .0;
-    left: 1em;
-    border-radius: 1.92em 1.92em;
-    transition: background-color .5s;
+    transform: translateX(0);
 }
 
 .switch input[type="checkbox"] {
-    width: 0;
-    height: 0;
+    width: 1px;
+    height: 1px;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -137,4 +141,5 @@
 
 .switch input[type="checkbox"]:focus+span {
     outline: 2px solid black;
+    outline-offset: 2px;
 }
