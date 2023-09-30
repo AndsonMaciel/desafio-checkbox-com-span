@@ -62,7 +62,7 @@
     opacity: 1;
 }
 
-input[type="checkbox"] {
+.lbl2 input[type="checkbox"] {
     width: 1px;
     height: 1px;
     padding: 0;
@@ -72,8 +72,69 @@ input[type="checkbox"] {
     outline: none;
 }
 
-input[type="checkbox"]:focus+span {
+.lbl2 input[type="checkbox"]:focus+span {
     outline: 2px solid black;
     outline-offset: -2px;
     box-sizing: border-box;
+}
+
+/* switch */
+
+.switch span {
+    display: inline-block;
+    font-size: 26px;
+    width: 2em;
+    height: 1em;
+    background-color: white;
+    position: relative;
+    border: 0.077em solid #ccc;
+    border-radius: 1.92em 1.92em;
+}
+
+.switch input[type="checkbox"]+span {
+    background-color: white;
+}
+
+.switch input[type="checkbox"]+span::before {
+    content: "";
+    display: block;
+    background-color: #ccc;
+    position: absolute;
+    top: .038em;
+    right: 1em;
+    bottom: .038em;
+    left: .038em;
+    border-radius: 1.92em 1.92em;
+    transition: background-color .5s;
+}
+
+.switch input[type="checkbox"]:checked+span {
+    background-color: #ccc;
+}
+
+.switch input[type="checkbox"]:checked+span::before {
+    content: "";
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: .0;
+    right: .0;
+    bottom: .0;
+    left: 1em;
+    border-radius: 1.92em 1.92em;
+    transition: background-color .5s;
+}
+
+.switch input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    outline: none;
+}
+
+.switch input[type="checkbox"]:focus+span {
+    outline: 2px solid black;
 }
