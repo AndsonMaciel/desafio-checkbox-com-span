@@ -1,4 +1,4 @@
-input[type=checkbox] {
+.chk1 {
     display: none;
 }
 
@@ -10,12 +10,12 @@ label span {
     background-color: red;
 }
 
-input[type=checkbox]:checked+label span {
+.chk1:checked+label span {
     background-color: blue;
     position: relative;
 }
 
-input[type=checkbox]:checked+label span::before {
+.chk1:checked+label span::before {
     content: "";
     display: block;
     border: .087em solid white;
@@ -25,6 +25,6 @@ input[type=checkbox]:checked+label span::before {
     bottom: .3em;
     left: 0.38em;
     transform: rotate(45deg);
-    border-top-color:transparent;
+    border-top-color: transparent;
     border-left-color: transparent;
 }
