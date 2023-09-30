@@ -2,7 +2,7 @@
     display: none;
 }
 
-label span {
+.chk1+label span {
     display: inline-block;
     font-size: 26px;
     width: 1em;
@@ -27,4 +27,53 @@ label span {
     transform: rotate(45deg);
     border-top-color: transparent;
     border-left-color: transparent;
+}
+
+/* Trabalhando o checkbox com acessibilidade */
+.lbl2 span {
+    display: inline-block;
+    font-size: 26px;
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    position: relative;
+}
+
+.lbl2 input[type="checkbox"]:checked+span {
+    background-color: blue;
+}
+
+.lbl2 input[type="checkbox"]+span::before {
+    content: "";
+    display: block;
+    border: .087em solid white;
+    position: absolute;
+    top: .077em;
+    right: .3em;
+    bottom: .3em;
+    left: .38em;
+    transform: rotate(45deg);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    opacity: 0;
+}
+
+.lbl2 input[type="checkbox"]:checked+span::before {
+    opacity: 1;
+}
+
+input[type="checkbox"] {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    outline: none;
+}
+
+input[type="checkbox"]:focus+span {
+    outline: 2px solid black;
+    outline-offset: -2px;
+    box-sizing: border-box;
 }
