@@ -81,7 +81,7 @@
 /* switch */
 
 .switch {
-    --swith-color: #cfd8dc;
+    --switch-color: #cfd8dc;
     --time: .2s;
 }
 
@@ -90,7 +90,7 @@
     width: 2em;
     height: 1em;
     border-radius: 1em;
-    outline: 0.077em solid var(--swith-color);
+    outline: 0.077em solid var(--switch-color);
     overflow: hidden;
     position: relative;
 }
@@ -101,7 +101,7 @@
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    background-color: var(--swith-color);
+    background-color: var(--switch-color);
     transition: all var(--time) ease-in-out;
     transform: translateX(0);
     position: relative;
@@ -118,7 +118,7 @@
     display: inline-block;
     width: 100%;
     height: 100%;
-    background-color: var(--swith-color);
+    background-color: var(--switch-color);
     transform: translateX(-100%);
     transition: transform var(--time) ease-in-out;
     position: absolute;
